@@ -28,6 +28,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
+            let loginView : FBSDKLoginButton = FBSDKLoginButton()
+            self.view.addSubview(loginView)
+            loginView.center = self.view.center
             self.returnUserData()
         }
         else
